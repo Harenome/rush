@@ -1,6 +1,10 @@
 Rush
 ====
 
+A minimal and stupid shell.
+
+This project is an attempt at learning **[Rust][]**.
+
 Requirements
 ------------
 
