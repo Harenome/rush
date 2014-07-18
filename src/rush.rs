@@ -65,14 +65,14 @@ mod rush
             {
                 let cmd_c_str = cmd.to_c_str ();
                 let arg_0 = cmd_c_str.clone ();
-                let mut args_c : Vec<*i8> = Vec::new ();
+                let mut args_c : Vec<* const i8> = Vec::new ();
                 args_c.push (arg_0.unwrap ());
                 for s in args.iter ()
                 {
                     args_c.push (s.to_c_str ().unwrap ());
                 }
                 args_c.push (ptr::null ());
-                execvp (cmd_c_str.unwrap (), args_c.as_ptr ());
+                execvp (cmd_c_str.unwrap (), args_c.as_mut_ptr ());
             }
             pid
         }
