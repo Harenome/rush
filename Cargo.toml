@@ -1,0 +1,9 @@
+[package]
+
+name = "rush"
+version = "0.1.0"
+authors = [ "harno.ranaivo@gmail.com" ]
+
+[[bin]]
+
+name = "rush"
