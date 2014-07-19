@@ -12,3 +12,6 @@ tags
 
 # Cargo directory
 target/
+
+# Vagrant
+.vagrant
