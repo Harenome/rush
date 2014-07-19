@@ -3,24 +3,20 @@
 
 # DOCKER-VERSION 1.0.0
 
-## Start from CentOS 7
-#---------------------
+## Start from CentOS 7.
+#----------------------
 FROM centos:centos7
 
-## Install development tools and dependencies
-#--------------------------------------------
-RUN yum install -y git make gcc-c++ python perl curl
+## Install development tools and dependencies.
+#---------------------------------------------
+RUN yum install -y git make gcc-c++ python perl curl tar sudo
 
-## Download and the nightly build
-#----------------------------
-# rustup.sh depends on sudo...
-RUN yum install -y sudo tar
-
-# Install both Rust and Cargo.
+## Install both Rust and Cargo.
+#------------------------------
 RUN curl www.rust-lang.org/rustup.sh | bash
 
-## Configure the container
-#-------------------------
+## Configure the container.
+#--------------------------
 ENV LD_LIBRARY_PATH /usr/local/lib/
 CMD /bin/bash
 VOLUME [ "/project" ]
